@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React = require('react');
+import { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
+import { Board } from './Board';
+import { Cell } from './Cell';
 
 interface AppProps {}
 interface AppState {
@@ -19,8 +21,7 @@ class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>Start editing to see some magic happen :)</p>
+        <Board data={Array<Array<typeof Cell>>()} totalBombs={10} />
       </div>
     );
   }
